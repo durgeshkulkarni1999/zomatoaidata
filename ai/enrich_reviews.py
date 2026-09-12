@@ -8,7 +8,7 @@ load_dotenv()
 
 MODEL = "gpt-4o-mini"
 
-SAMPLE_N = 5
+#SAMPLE_N = 5
 TOPICS = ["food quality", "delivery", "pricing", "service", "packaging", "other"]
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
@@ -58,7 +58,6 @@ def get_reviews_to_enrich(cursor):
         SELECT REVIEW_ID, COMMENT
         FROM ZOMATO.RAW.REVIEWS
         WHERE REVIEW_ID NOT IN (SELECT REVIEW_ID FROM ZOMATO.AI.REVIEW_ENRICHED)
-        LIMIT {SAMPLE_N}
     """)
     return cursor.fetchall()
 
