@@ -25,6 +25,7 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
+requirements.txt
 
 # Generated outputs
-ai/review_embeddings.parquet
+review_embeddings.parquet
